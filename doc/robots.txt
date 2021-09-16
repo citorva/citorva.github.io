@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: //perso.isima.fr/~veduet/sitemap.xml
