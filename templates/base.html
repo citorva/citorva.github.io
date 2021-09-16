@@ -1,0 +1,96 @@
+{% if section %}
+	{% set dat = section %}
+{% elif page %}
+	{% set dat = page %}
+{% endif %}
+
+{% set ancestor = get_section(path="_index.md") %}
+{% set subsections = ancestor.subsections %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="{{ config.base_url | safe }}/{% if dat.extra.illustration %}{{ i.extra.illustration }}{% else %}illustration.svg{% endif %}" />
+
+	<meta property="og:locale" content="{{ lang }}">
+	{% if dat.translations %}{% for i in dat.translations %}{% if i.lang != lang %}
+	<meta propetry="og:locale:alternate" content="{{ i.lang }}">
+	{% endif %}{% endfor %}{% endif %}
+
+	{% block meta %}
+	<meta property="og:url" content="{{ dat.permalink }}" />
+	{% if dat.summary %}<meta property="og:description" content="{{ dat.summary | safe | striptags }}" />{% endif %}
+	<meta property="og:title" content="{{ dat.title }} – {{ config.title }}" />
+	{% endblock meta %}
+
+	<link rel="icon" href="{{ config.base_url | safe }}/icon.svg">
+	<link rel="stylesheet" href="{{ config.base_url | safe }}/style.css">
+	{% block styles %}{% endblock styles %}
+
+	<script src="{{ config.base_url | safe }}/main.js"></script>
+	<script>
+		{% if config.build_search_index %}
+			let search_index_url = "{{ config.base_url | safe }}/search_index.{{ lang }}.json";
+		{% else %}
+			let search_index_url = null;
+		{% endif %}
+	</script>
+
+	<script src="{{ config.base_url | safe }}/elasticlunr.min.js"></script>
+	{% if lang != "en" %}	
+		<script src="{{ config.base_url | safe }}/lunr.stemmer.support.js"></script>
+		<script src="{{ config.base_url | safe }}/lunr.{{ lang }}.js"></script>
+	{% endif %}
+	{% block scripts %}{% endblock scripts %}
+
+	<title>{% block title %}{{ dat.title }} – {{ config.title }}{% endblock title %}</title>
+</head>
+
+<body class="nojs">
+	{% block header %}<header>
+		<div id="main-title">{{ config.title }}</div>
+		<nav>
+			<ul>
+				<li><a href="{{ get_url(path="/", lang=lang) }}">{{ trans(key="home", lang=lang) }}</a></li>{% for i in subsections %}{% set subsection = get_section(path=i) %}<li><a href="{{ subsection.permalink | safe }}">{{ subsection.title }}</a></li>{% endfor %}
+			</ul>
+
+			<form action="" id="search" class="jsonly">
+				<input type="text" name="q" placeholder="{{ trans(key="search_placeholder", lang=lang) }}">
+				<div id="search-results">
+					<div id="loading" style="display: none;">Loading</div>
+					<div id="nothing-found" style="display: none;">{{ trans(key="search_no_found", lang=lang) }}</div>
+					<ul></ul>
+				</div>
+			</form>
+			{% if dat.translations | length > 1 %}
+			<div id="translation" tabindex="0">
+				<div id="translation_button" class="icon-translate">{{ trans(key="also_available", lang=lang) }}</div>
+				<ul>
+				{% for i in dat.translations %}{% if i.lang != lang %}
+					<li><a href="{{ i.permalink }}">{{ trans(key="lang", lang=i.lang) }}</a></li>
+				{% endif %}{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+		</nav>
+	</header>{% endblock header %}
+
+	<section>
+		{% block content %}{{ dat.content | safe }}{% endblock content %}
+	</section>
+
+	<footer>
+		<div id="copy">&copy; 2021 Venceslas Duet.</div>
+		<ul id="links">
+			<li><a href="https://github.com/citorva/" class="icon-github">{{ trans(key="github", lang=lang) }}</a></li>
+			<li><a href="https://www.linkedin.com/in/venceslas-duet-695443170/" class="icon-linkedin">{{ trans(key="linkedin", lang=lang) }}</a></li>
+			<li><a href="https://twitter.com/citorva/" class="icon-twitter">{{ trans(key="twitter", lang=lang) }}</a></li>
+		</ul>
+	</footer>
+</body>
+
+</html>

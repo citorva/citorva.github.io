@@ -1,0 +1,11 @@
+$light_background:     #e9eff1;
+$light_color:          #02080a;
+$light_nav_background: #02080a;
+$light_nav_color:      #e9eff1;
+
+$dark_background:      #02080a;
+$dark_color:           #e9eff1;
+$dark_nav_background:  lighten($dark_background, 5%);
+$dark_nav_color:       #e9eff1;
+
+$nav_text_hightlight: #C5CAE9;

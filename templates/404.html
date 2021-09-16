@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block meta %}
+	<meta property="og:title" content="404 Error – {{ config.title }}" />
+{% endblock meta %}
+
+{% block title %}404 Error – {{ config.title }}{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ config.base_url | safe }}/errorpage.css">
+{% endblock styles %}
+
+{% block scripts %}
+<script>
+    register_onloaded(() => {
+        let collection = document.getElementsByClassName("unix-path");
+
+        for (i = 0; i < collection.length; i++) {
+            collection[i].innerText = window.location.pathname + " ";
+        }
+    });
+</script>
+{% endblock scripts %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+        <div class="code">
+            <p><span class="unix-path"></span>$ ls -a</p>
+            <p><span class="unix-dir">.</span>&nbsp;&nbsp;<span class="unix-dir">..</span></p>
+            <p><span class="unix-path"></span>$ <span id="blink">_</span></p>
+        </div>
+
+        <ul id="error_action">
+            <li><a href="{{ config.base_url }}">cd /</a></li>
+            <li class="jsonly"><a href="javascript:history.back();">cd ..</a></li>
+        </ul>
+
+        <span id="or" class="jsonly">or</span>
+
+        <form action="" id="search" class="jsonly">
+            <input type="text" name="q" placeholder="{{ trans(key="search_placeholder", lang=lang) }}">
+        </form>
+{% endblock content %}

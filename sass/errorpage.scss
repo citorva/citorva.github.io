@@ -1,0 +1,89 @@
+@import "colors";
+
+@keyframes blinker {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+section {
+    text-align: center;
+
+    .code {
+        text-align: left;
+
+        .unix-dir {
+            color: #3F51B5;
+            font-weight: bold;
+        }
+
+        #blink {
+            animation: blinker 2s infinite;
+        }
+    }
+
+    .code, #error_action {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 18pt;
+    }
+
+    #error_action {
+        display: flex;
+        flex-direction: row;
+
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+
+        li {
+            list-style: none;
+
+            a {
+                display: block;
+                line-height: 1cm;
+
+                border: solid 1px $light_color;
+
+                margin: 0 5mm;
+
+                text-align: center;
+
+                min-width: 4cm;
+
+                border-radius: 4px
+            }
+        }
+    }
+
+    #or {
+        font-size: 12pt;
+        line-height: 1cm;
+    }
+
+    #search {
+        max-width: 480px;
+        text-align: left;
+        margin: auto;
+        border-bottom: solid 1px $light_color;
+    }
+}
+
+// Dark mode integration
+@media (prefers-color-scheme: dark) {
+    section #error_action li a {
+        border-color: $dark_color;
+    }
+
+    section #search {
+        border-color: $dark_color;
+    }
+}

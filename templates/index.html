@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    {% for i in dat.pages %}{% if i.draft == false %}
+        <li><a href="{{ i.permalink }}">
+            <h1>{{ i.title }}</h1>
+            <ul>
+                {% if i.extra.illustration %}<li id="illustration"><img src="{{ config.base_url | safe }}/{{ i.extra.illustration }}"></li>{% endif %}
+                <li id="reading-time"><b>{{ trans(key="reading-time", lang=lang) }} :</b> {% if i.reading_time == 1 %}{{ trans(key="lt1min",lang=lang) }}{% else %}~{{ i.reading_time }} {{ trans(key="minutes", lang=lang) }}{% endif %}</li>
+                {% if i.date is string %}<li id="date"><b>{{ trans(key="date", lang=lang) }} :</b> {{ i.date }}</li>{% endif %}
+                {% if i.updated is string %}<li id="update-date"><b>{{ trans(key="updated", lang=lang) }} :</b> {{ i.updated }}</li>{% endif %}
+                <li id="summary">{{ i.summary | safe | striptags }}</li>
+            </ul>
+        </a></li>
+    {% endif %}{% endfor %}
+</ul>
+{% endblock content %}
