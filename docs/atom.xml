@@ -2,17 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>Venceslas Duet_</title>
 	<subtitle>Personnal site and blog of Venceslas Duet</subtitle>
-	<link href="//perso.isima.fr/~veduet/atom.xml" rel="self" type="application/atom+xml"/>
-  <link href="//perso.isima.fr/~veduet"/>
+	<link href="//citorva.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="//citorva.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
 	<updated>2021-09-14T00:00:00+00:00</updated>
-	<id>//perso.isima.fr/~veduet/atom.xml</id>
+	<id>//citorva.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>English only content</title>
 		<published>2015-09-13T00:00:00+00:00</published>
 		<updated>2021-09-14T00:00:00+00:00</updated>
-		<link href="//perso.isima.fr/~veduet/content/" type="text/html"/>
-		<id>//perso.isima.fr/~veduet/content/</id>
+		<link href="//citorva.github.io/content/" type="text/html"/>
+		<id>//citorva.github.io/content/</id>
 		<content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, urna nec dictum semper, nisl turpis vehicula velit, ornare ornare nulla tellus in mauris. Cras magna lacus, tincidunt ut elementum id, accumsan at leo. Suspendisse vulputate diam id nibh euismod aliquet. In ac lectus viverra, sodales urna sit amet, euismod ex. Morbi id velit bibendum, volutpat justo at, tempus velit. Curabitur varius nulla tortor, id facilisis lorem tincidunt non. Curabitur in accumsan ligula. Pellentesque sollicitudin turpis sit amet lectus dapibus feugiat.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
 &lt;p&gt;Ut rhoncus iaculis vulputate. Ut in commodo ante, id vehicula enim. Cras volutpat ipsum non nibh tincidunt ullamcorper. Ut ac iaculis justo. Curabitur varius tellus magna, vel fringilla lectus suscipit in. Pellentesque vulputate pharetra nisi, in pretium risus tristique fermentum. Vestibulum imperdiet rhoncus dui, a fermentum nibh convallis a. Etiam nec accumsan felis. Integer at est ex. Aliquam eu efficitur felis. Vivamus facilisis maximus bibendum. Nulla aliquet lorem quis elit auctor auctor. Nunc ultricies lectus elit, ac tempor sapien eleifend bibendum. Vivamus sed sem ac erat lacinia ultrices a et neque.&lt;&#x2F;p&gt;
@@ -25,8 +25,8 @@
 		<title>Multilingue content</title>
 		<published>2015-09-05T00:00:00+00:00</published>
 		<updated>2021-09-14T00:00:00+00:00</updated>
-		<link href="//perso.isima.fr/~veduet/content-mul/" type="text/html"/>
-		<id>//perso.isima.fr/~veduet/content-mul/</id>
+		<link href="//citorva.github.io/content-mul/" type="text/html"/>
+		<id>//citorva.github.io/content-mul/</id>
 		<content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, urna nec dictum semper, nisl turpis vehicula velit, ornare ornare nulla tellus in mauris. Cras magna lacus, tincidunt ut elementum id, accumsan at leo. Suspendisse vulputate diam id nibh euismod aliquet. In ac lectus viverra, sodales urna sit amet, euismod ex. Morbi id velit bibendum, volutpat justo at, tempus velit. Curabitur varius nulla tortor, id facilisis lorem tincidunt non. Curabitur in accumsan ligula. Pellentesque sollicitudin turpis sit amet lectus dapibus feugiat.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
 &lt;p&gt;Ut rhoncus iaculis vulputate. Ut in commodo ante, id vehicula enim. Cras volutpat ipsum non nibh tincidunt ullamcorper. Ut ac iaculis justo. Curabitur varius tellus magna, vel fringilla lectus suscipit in. Pellentesque vulputate pharetra nisi, in pretium risus tristique fermentum. Vestibulum imperdiet rhoncus dui, a fermentum nibh convallis a. Etiam nec accumsan felis. Integer at est ex. Aliquam eu efficitur felis. Vivamus facilisis maximus bibendum. Nulla aliquet lorem quis elit auctor auctor. Nunc ultricies lectus elit, ac tempor sapien eleifend bibendum. Vivamus sed sem ac erat lacinia ultrices a et neque.&lt;&#x2F;p&gt;
