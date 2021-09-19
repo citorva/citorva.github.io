@@ -12,7 +12,7 @@ default_language = "en"
 # theme = ""
 
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")
-output_dir = "doc"
+output_dir = "docs"
 
 # When set to "true", the Sass files in the `sass` directory in the site root are compiled.
 # Sass files in theme directories are always compiled.
