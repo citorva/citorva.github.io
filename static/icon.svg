@@ -19,7 +19,7 @@
       fill: #02080a;
    }
 
-   @media (prefers-color-scheme: dark) {
+   @media (prefers-color-scheme: light) {
    
    #bg {
       fill: #02080a;
